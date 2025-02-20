@@ -1,27 +1,9 @@
 import './index.css'
-import App from './App.tsx'
 import { HelmetProvider } from 'react-helmet-async'
 import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import MainPage from './pages/MainPage/MainPage.tsx'
 import { createRoot } from 'react-dom/client'
-import { TestPage } from './pages/AIGenPages/TestPage.tsx'
+import App from './App';
 
-const router1 = createBrowserRouter([{
-  path: '/',
-  element: <App />,
-  children: [
-    {
-      path: '',
-      element: <MainPage />
-    },
-    {
-path: 'test',
-element: <TestPage />
-    }
-  ]
-
-}])
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
@@ -29,7 +11,7 @@ if (rootElement) {
   root.render(
     <HelmetProvider>
       <React.StrictMode>
-        <RouterProvider router={router1} />
+        <App/>
       </React.StrictMode>
     </HelmetProvider>
   );
